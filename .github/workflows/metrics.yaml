@@ -78,7 +78,7 @@ jobs:
           plugin_stargazers_days: 14
           plugin_stars: no
           plugin_stars_limit: 4
-          plugin_topics: yes
+          plugin_topics: no
           plugin_topics_limit: 15
           plugin_topics_mode: starred
           plugin_topics_sort: stars
