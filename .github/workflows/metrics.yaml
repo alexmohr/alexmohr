@@ -9,11 +9,14 @@ on:
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     environment:
       name: production
     permissions:
       contents: write
+      actions: write
     steps:
+      - uses: liskin/gh-workflow-keepalive@v1
       - uses: lowlighter/metrics@latest
         with:
           # Your GitHub token
@@ -43,10 +46,10 @@ jobs:
           plugin_activity_limit: 5
           plugin_activity_load: 300
           plugin_activity_visibility: all
-          plugin_followup: yes
+          plugin_followup: no
           plugin_followup_archived: yes
           plugin_followup_sections: repositories
-          plugin_habits: yes
+          plugin_habits: no
           plugin_habits_charts_type: classic
           plugin_habits_days: 14
           plugin_habits_facts: yes
@@ -67,12 +70,12 @@ jobs:
           plugin_languages_recent_load: 300
           plugin_languages_sections: most-used
           plugin_languages_threshold: 0%
-          plugin_notable: yes
+          plugin_notable: no
           plugin_notable_from: organization
           plugin_notable_types: commit
           plugin_projects: no
           plugin_projects_limit: 4
-          plugin_stargazers: yes
+          plugin_stargazers: no
           plugin_stargazers_charts: yes
           plugin_stargazers_charts_type: classic
           plugin_stargazers_days: 14
@@ -82,4 +85,4 @@ jobs:
           plugin_topics_limit: 15
           plugin_topics_mode: starred
           plugin_topics_sort: stars
-          plugin_traffic: yes
+          plugin_traffic: no
